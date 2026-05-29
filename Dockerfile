@@ -24,7 +24,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Скачиваем файл модели GGUF с Google Диска
 RUN pip install --no-cache-dir gdown && \
-    gdown --id 1Iwt06GYj3YH9pFxQfE7LqYGYFIZrehsn -O Qwen2.5-0.5B-Instruct.Q4_K_M.gguf
+    gdown 1Iwt06GYj3YH9pFxQfE7LqYGYFIZrehsn -O Qwen2.5-0.5B-Instruct.Q4_K_M.gguf
+
 
 # Копируем код бэкенда и фронтенда
 COPY backend/ ./backend/
