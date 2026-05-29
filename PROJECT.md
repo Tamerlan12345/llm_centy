@@ -29,7 +29,8 @@
 |---|------|------|--------|-------|-------------------------|-------|
 | 1 | Create lightweight chat application with PostgreSQL, GGUF running on CPU, and a modern frontend | Feature | Completed | All | G1, G2, G3, G4 | Initial task complete, verified locally |
 | 2 | Add script to download Qwen2.5 GGUF model from Google Drive folder | Feature | Completed | [download_model.py](file:///f:/llm_centy/download_model.py) | G1, G2, G3 | Setup automatic model downloading via gdown |
-| 3 | Fix Docker base image registry for llama.cpp due to migration to ggml-org | Fix | Completed | [Dockerfile](file:///f:/llm_centy/Dockerfile) | G2, G3 | Update image registry to ghcr.io/ggml-org/llama.cpp:server |
+| 3 | Fix Docker base image registry and binary path for llama.cpp due to migration to ggml-org | Fix | Completed | [Dockerfile](file:///f:/llm_centy/Dockerfile) | G2, G3 | Update image registry to ghcr.io/ggml-org/llama.cpp:server and binary source path to /app/llama-server |
+
 
 
 ## Known Issues & Technical Debt
