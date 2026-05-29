@@ -31,8 +31,9 @@
 | 2 | Add script to download Qwen2.5 GGUF model from Google Drive folder | Feature | Completed | [download_model.py](file:///f:/llm_centy/download_model.py) | G1, G2, G3 | Setup automatic model downloading via gdown |
 | 3 | Fix Docker base image registry and binary path for llama.cpp due to migration to ggml-org | Fix | Completed | [Dockerfile](file:///f:/llm_centy/Dockerfile) | G2, G3 | Update image registry to ghcr.io/ggml-org/llama.cpp:server and binary source path to /app/llama-server |
 | 4 | Fix gdown arguments in Dockerfile for gdown v6 compliance | Fix | Completed | [Dockerfile](file:///f:/llm_centy/Dockerfile) | G2, G3 | Remove deprecated --id flag and pass file ID as positional argument |
-| 5 | Copy shared libraries (.so) for llama-server in Dockerfile | Fix | Completed | [Dockerfile](file:///f:/llm_centy/Dockerfile) | G2, G3 | Add COPY instruction for /app/*.so to /usr/lib/ |
+| 5 | Copy shared libraries (.so) and versioned libraries (.so*) for llama-server and run ldconfig in Dockerfile | Fix | Completed | [Dockerfile](file:///f:/llm_centy/Dockerfile) | G2, G3 | Add COPY instruction for /app/*.so* to /usr/lib/ and run ldconfig |
 | 6 | Fix NameErrors in backend/main.py | Fix | Completed | [backend/main.py](file:///f:/llm_centy/backend/main.py) | G2, G3 | Import AsyncSessionLocal and func |
+
 
 
 
