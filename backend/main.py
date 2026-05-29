@@ -269,7 +269,7 @@ async def stream_llm_response(
                         yield f"data: {json.dumps({'error': 'Ошибка сервера генерации текста'})}\n\n"
                         return
 
-                    async for line in response.iter_lines():
+                    async for line in response.aiter_lines():
                         if await request.is_disconnected():
                             logger.info("Клиент отключился. Прерываем генерацию LLM.")
                             break
