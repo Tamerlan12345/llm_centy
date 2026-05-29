@@ -4,6 +4,7 @@ import time
 import uuid
 import logging
 import asyncio
+import httpx
 from typing import List
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Depends, HTTPException, Request, status
