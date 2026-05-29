@@ -1,5 +1,6 @@
 # --- Этап 1: Получение скомпилированного бинарника llama-server ---
-FROM ghcr.io/ggerganov/llama.cpp:server AS llama-bin
+FROM ghcr.io/ggml-org/llama.cpp:server AS llama-bin
+
 
 # --- Этап 2: Финальный образ бэкенда и фронтенда ---
 FROM python:3.11-slim
