@@ -11,10 +11,10 @@ from fastapi.responses import StreamingResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from sqlalchemy import select, delete, desc
+from sqlalchemy import select, delete, desc, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from .database import init_db, get_db, Chat, Message, GenerationLog
+from .database import init_db, get_db, Chat, Message, GenerationLog, AsyncSessionLocal
 from .llm_manager import LLMManager
 
 # Настройка логирования

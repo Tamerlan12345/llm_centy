@@ -11,8 +11,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     && rm -rf /var/lib/apt/lists/*
 
-# Копируем бинарный файл сервера llama.cpp из первого этапа
+# Копируем бинарный файл сервера llama.cpp и его разделяемые библиотеки (.so) из первого этапа
 COPY --from=llama-bin /app/llama-server /usr/bin/llama-server
+COPY --from=llama-bin /app/*.so /usr/lib/
+
 
 
 # Настройка рабочей директории
