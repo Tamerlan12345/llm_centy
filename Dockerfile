@@ -30,7 +30,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Скачиваем файл модели GGUF с Google Диска
 RUN pip install --no-cache-dir gdown && \
-    gdown 1wf1coRj2SwfI1LsweYYummGVcwNrPsHl -O Centy_Custom_1.2B_Q4.gguf
+    gdown 1Iwt06GYj3YH9pFxQfE7LqYGYFIZrehsn -O Qwen2.5-0.5B-Instruct.Q4_K_M.gguf
 
 
 # Копируем код бэкенда и фронтенда
@@ -45,7 +45,7 @@ RUN chmod +x start.sh
 ENV PORT=8000
 ENV DATABASE_URL=""
 ENV LLAMA_SERVER_PATH=/usr/bin/llama-server
-ENV MODEL_PATH=/app/Centy_Custom_1.2B_Q4.gguf
+ENV MODEL_PATH=/app/Qwen2.5-0.5B-Instruct.Q4_K_M.gguf
 ENV LLAMA_PORT=8088
 ENV LLAMA_THREADS=2
 ENV LLAMA_NO_MMAP=false
