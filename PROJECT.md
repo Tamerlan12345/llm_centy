@@ -22,11 +22,13 @@
 | 1 | 2026-05-28 | Subprocess `llama-server` | Compiling `llama-cpp-python` in Docker takes 5-10 minutes and often crashes on Railway build limits. | Python C-bindings (`llama-cpp-python`) | Low |
 | 2 | 2026-05-28 | SQLite fallback | Enable local testing without running a PostgreSQL instance. | Hard Postgres requirement | None |
 | 3 | 2026-05-28 | Parent Process Lifespan | Python FastAPI manages subprocess lifecycle of `llama-server` to avoid orphaned background processes. | Background shell script launching | Medium |
+| 4 | 2026-05-29 | Model download during Docker build via `gdown` | File size (~400MB) exceeds comfortable Git limits. Downloading during container build avoids cold-start latency. | Downloading at runtime in `start.sh` | Low |
 
 ## Task Log
 | # | Task | Mode | Status | Files | Goals satisfied (G1–G4) | Notes |
 |---|------|------|--------|-------|-------------------------|-------|
 | 1 | Create lightweight chat application with PostgreSQL, GGUF running on CPU, and a modern frontend | Feature | Completed | All | G1, G2, G3, G4 | Initial task complete, verified locally |
+| 2 | Add script to download Qwen2.5 GGUF model from Google Drive folder | Feature | Completed | [download_model.py](file:///f:/llm_centy/download_model.py) | G1, G2, G3 | Setup automatic model downloading via gdown |
 
 ## Known Issues & Technical Debt
 | Issue | Severity | Location | Impact on G1 / G3 / G4 | Owner | Plan |
@@ -37,3 +39,4 @@
 - **Install packages (local)**: `.\venv\Scripts\pip.exe install -r requirements.txt`
 - **Run local server**: `$env:USE_MOCK_LLM='true'; .\venv\Scripts\python.exe -m uvicorn backend.main:app --host 127.0.0.1 --port 8000`
 - **Build Container**: `docker build -t centy-ai .`
+- **Download Model**: `python download_model.py`
