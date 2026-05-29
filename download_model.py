@@ -16,10 +16,9 @@ def install_and_import(package):
     return gdown
 
 def main():
-    # Идентификатор папки или файла на Google Диске
-    # Файл: Qwen2.5-0.5B-Instruct.Q4_K_M.gguf
-    file_id = "1Iwt06GYj3YH9pFxQfE7LqYGYFIZrehsn"
-    output = "Qwen2.5-0.5B-Instruct.Q4_K_M.gguf"
+    # Файл: Centy_Llama_1.2B_Q4.gguf
+    file_id = "16t8QU2Og28ArUk9WAccwb0xxf0y43GCi"
+    output = "Centy_Llama_1.2B_Q4.gguf"
     
     # Проверяем, существует ли файл уже
     if os.path.exists(output):

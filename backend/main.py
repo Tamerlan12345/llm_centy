@@ -60,7 +60,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="Centy AI Chat API",
-    description="API для чат-сервиса Centy на базе Qwen2.5-0.5B-Instruct GGUF",
+    description="API для чат-сервиса Centy на базе Centy Llama 1.2B Q4 GGUF",
     version="1.0.0",
     lifespan=lifespan
 )
@@ -254,7 +254,7 @@ async def stream_llm_response(
                     "POST",
                     f"{llm_manager.get_api_url()}/v1/chat/completions",
                     json={
-                        "model": "qwen",
+                        "model": "llama",
                         "messages": llm_messages,
                         "stream": True,
                         "temperature": 0.2,

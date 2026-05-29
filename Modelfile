@@ -1,5 +1,5 @@
 
-FROM Qwen2.5-0.5B-Instruct.Q4_K_M.gguf
+FROM Centy_Llama_1.2B_Q4.gguf
 
 TEMPLATE """{{- if .Messages }}
 {{- if or .System .Tools }}<|im_start|>system

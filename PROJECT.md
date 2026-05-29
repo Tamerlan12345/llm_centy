@@ -23,6 +23,7 @@
 | 2 | 2026-05-28 | SQLite fallback | Enable local testing without running a PostgreSQL instance. | Hard Postgres requirement | None |
 | 3 | 2026-05-28 | Parent Process Lifespan | Python FastAPI manages subprocess lifecycle of `llama-server` to avoid orphaned background processes. | Background shell script launching | Medium |
 | 4 | 2026-05-29 | Model download during Docker build via `gdown` | File size (~400MB) exceeds comfortable Git limits. Downloading during container build avoids cold-start latency. | Downloading at runtime in `start.sh` | Low |
+| 5 | 2026-05-29 | Centy Llama 1.2B Model | Switch model from Qwen2.5-0.5B to Llama 1.2B for better quality of answers while keeping memory footprint low. | Qwen2.5-0.5B, Qwen2.5-1.5B | Low |
 
 ## Task Log
 | # | Task | Mode | Status | Files | Goals satisfied (G1–G4) | Notes |
@@ -33,6 +34,7 @@
 | 4 | Fix gdown arguments in Dockerfile for gdown v6 compliance | Fix | Completed | [Dockerfile](file:///f:/llm_centy/Dockerfile) | G2, G3 | Remove deprecated --id flag and pass file ID as positional argument |
 | 5 | Copy shared libraries (.so) and versioned libraries (.so*) for llama-server and run ldconfig in Dockerfile | Fix | Completed | [Dockerfile](file:///f:/llm_centy/Dockerfile) | G2, G3 | Add COPY instruction for /app/*.so* to /usr/lib/ and /usr/bin/ and run ldconfig |
 | 6 | Fix NameErrors in backend/main.py | Fix | Completed | [backend/main.py](file:///f:/llm_centy/backend/main.py) | G2, G3 | Import AsyncSessionLocal, func, and httpx |
+| 7 | Switch model to Centy Llama 1.2B Q4 GGUF from custom Google Drive URL | Feature | Completed | [download_model.py](file:///f:/llm_centy/download_model.py), [Dockerfile](file:///f:/llm_centy/Dockerfile), [backend/llm_manager.py](file:///f:/llm_centy/backend/llm_manager.py), [backend/main.py](file:///f:/llm_centy/backend/main.py), [frontend/index.html](file:///f:/llm_centy/frontend/index.html), [Modelfile](file:///f:/llm_centy/Modelfile) | G1, G2, G3 | Swapped model to Centy Llama 1.2B Q4 GGUF by changing download script, docker config, and references |
 
 
 

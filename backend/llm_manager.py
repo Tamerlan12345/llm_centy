@@ -13,7 +13,7 @@ class LLMManager:
         # Путь к бинарному файлу llama-server
         self.llama_bin = os.getenv("LLAMA_SERVER_PATH", "llama-server")
         # Путь к модели GGUF
-        self.model_path = os.getenv("MODEL_PATH", "Qwen2.5-0.5B-Instruct.Q4_K_M.gguf")
+        self.model_path = os.getenv("MODEL_PATH", "Centy_Llama_1.2B_Q4.gguf")
         # Внутренний порт, на котором будет крутиться llama-server
         self.port = int(os.getenv("LLAMA_PORT", "8088"))
         # Количество потоков CPU
